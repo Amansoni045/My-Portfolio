@@ -52,7 +52,6 @@ ul{
   position: fixed;
   z-index: 999;
   width: 100%;
-  background-color: crimson;
   padding: 25px;
 }
 
@@ -124,6 +123,28 @@ ul{
   padding-top: 80px;
 }
 
+.social-media{
+  position: absolute;
+  top: 53%;
+  left: 50px;
+  transform: translateY(-53%);
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.social-media li a{
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  padding: 20px 15px;
+  color: rgba(100,111,135,0.58);
+  transition: all 0.3s ease-out 0s;
+}
+
+.social-media li a:hover{
+  color: black;
+}
+
 .home-section .home-text, .home-section .home-image{
   flex: 0 0 50%;
   max-width: 50%;
@@ -147,7 +168,7 @@ ul{
 .home-section .home-text span{
   font-size: 18px;
   line-height: 28px;
-  color: #000000;
+  color: black;
   font-weight: 500;
   display: block;
   margin-top: 15px;
@@ -169,4 +190,27 @@ ul{
   position: relative;
   width: 100%;
   z-index: 789;
+}
+
+.header-myPhoto-shape{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 42%;
+  height: 100%;
+}
+
+.header-myPhoto-shape::before{
+  position: absolute;
+  content: "";
+  width: 1000%;
+  height: 100%;
+  background: linear-gradient(120deg, #1E2A38, #000);
+  transform: skewX(20deg);
+  top: 0;
+  left: 0;
+}
+
+img{
+  vertical-align: middle;
 }
