@@ -116,4 +116,57 @@ ul{
   width: 15%;
 }
 
+.home-section{
+  position: relative;
+  background-color: #f7f7f7;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 80px;
+}
 
+.home-section .home-text, .home-section .home-image{
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 25px;
+}
+
+.home-section .home-text h4{
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #000000;
+}
+
+.home-section .home-text h1{
+  font-size: 50px;
+  font-weight: 700;
+  margin-top: 15px;
+  color: #000000;
+}
+
+.home-section .home-text span{
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+  font-weight: 500;
+  display: block;
+  margin-top: 15px;
+}
+
+.home-section .home-text p{
+  font-size: 16px;
+  color: #000000;
+  font-weight: 24px;
+  margin-top: 15px;
+}
+
+.home-section .home-text .btn{
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.home-section .home-image .img-box img{
+  position: relative;
+  width: 100%;
+  z-index: 789;
+}
