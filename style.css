@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body{
+  font-size: 16px;
+  font-weight: normal;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+
+ul{
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: black; 
+  text-decoration: none; 
+}
+
+.logo span {
+  font-weight: 600;
+  color: #007BFF; 
+}
+
+.logo span:first-child {
+  color: #000000; 
+}
+
+.container{
+  max-width: 1140px;
+  margin: auto;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar{
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  background-color: crimson;
+  padding: 25px;
+}
+
+.navbar .menu .nav-item{
+  display: inline-block;
+  position: relative;
+  margin-left: 36px;
+}
+
+.navbar .menu .nav-item .nav-link{
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+  text-transform: capitalize;
+  padding: 10px 0;
+}
+
+.navbar .menu .nav-item .nav-link span{
+  width: 0;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-out 0s;
+}
+
+.navbar .menu .nav-item .nav-link span::before{
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: white;
+  left: 110%;
+}
+
+.navbar .menu .nav-item .nav-link span::after{
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: white;
+  left: 140%;
+}
+
+.navbar .nav-item > .nav-link.active span,.navbar .nav-item:hover > .nav-link span{
+  opacity: 1;
+  visibility: visible;
+  width: 60%;
+}
+
+.navbar .nav-item > .nav-link.active span::before,.navbar .nav-item:hover > .nav-link span::before{
+  width: 20%;
+}
+
+.navbar .nav-item > .nav-link.active span::after,.navbar .nav-item:hover > .nav-link span::after{
+  width: 15%;
+}
+
+
