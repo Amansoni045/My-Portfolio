@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kaushan+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
   margin: 0;
@@ -12,7 +13,7 @@ body{
   font-size: 16px;
   font-weight: normal;
   overflow-x: hidden;
-  background-color: #fff;
+  background-color: #fff; 
 }
 
 ul{
@@ -25,17 +26,8 @@ ul{
   font-weight: 700;
   font-size: 24px;
   letter-spacing: 1px;
-  color: black; 
-  text-decoration: none; 
-}
-
-.logo span {
-  font-weight: 600;
   color: #007BFF; 
-}
-
-.logo span:first-child {
-  color: #000000; 
+  text-decoration: none; 
 }
 
 .container{
@@ -54,6 +46,7 @@ ul{
   width: 100%;
   padding: 25px;
 }
+
 
 .navbar .menu .nav-item{
   display: inline-block;
@@ -151,14 +144,19 @@ ul{
   padding: 0 25px;
 }
 
+.home-section .home-text{
+  font-family: 'Kaushan Script', cursive;
+}
+
 .home-section .home-text h4{
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 4px;
-  color: #000000;
+  color: #1b2531;
 }
 
 .home-section .home-text h1{
+  font-family: 'Kaushan Script', cursive;
   font-size: 50px;
   font-weight: 700;
   margin-top: 15px;
@@ -176,19 +174,20 @@ ul{
 
 .home-section .home-text p{
   font-size: 16px;
-  color: #000000;
+  color: #908e9e;
   font-weight: 24px;
   margin-top: 15px;
 }
 
 .home-section .home-text .btn{
+  font-family: 'Poppins', sans-serif;
   display: inline-block;
   margin-top: 15px;
 }
 
 .home-section .home-image .img-box img{
   position: relative;
-  width: 100%;
+  width: 120%;
   z-index: 789;
 }
 
@@ -214,3 +213,4 @@ ul{
 img{
   vertical-align: middle;
 }
+
