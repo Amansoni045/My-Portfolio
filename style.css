@@ -320,128 +320,124 @@ img{
   100% { background-position: 0% 50%; }
 }
 
-.projects {
+
+.projects-section {
   min-height: 100vh;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #f0faff, #ffffff);
+  padding: 60px 20px 40px;
+  background: (135deg, #f0faff, #ffffff);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-.projects .projects-filter{
-  flex: 0 0 100%;
-  max-width: 100%; 
-  padding: 20px;
+.section-title {
   text-align: center;
+  margin-bottom: 40px;
 }
 
-.projects .projects-filter button{
+.main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
   text-transform: uppercase;
-  margin-top: -20px;
-  outline: none;
-  border: 1px solid;
-  border-color: black;
-  padding: 8px;
-  font-weight: 600;
-  border-radius: 5px;
-  background-color: white;
-  margin-right: 20px;
-  color: black;
-  transition: all 0.3s ease;
+  color: #222;
 }
 
-.projects .projects button:hover,
-.projects .projects-filter button.active{
-  color: white;
-  background-color: black;
-}
-
-
-.projects .projects-item{
-  flex: 0 0 33.33%;
-  max-width: 33.33%;
-  padding: 20px;
+.line {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-}
-
-.projects .projects-item-inner{
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: rgb(44, 43, 43); /*shadowblack*/
-  cursor: pointer;
-  position: relative;
-}
-
-.projects .projects-item-inner .projects-img img{
-  width: 100%;
-  display: block;
-}
-
-.projects .projects-item .projects-info{
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
-  height: 100%;
-  width: 100%;
-  padding: 30px;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-.projects .projects-item:hover .projects-info{
-  opacity: 1;
-}
-
-.projects .projects-item .projects-info h4{
-  font-size: 18px;
-  font-weight: 700;
-  color: red;
-  text-transform: capitalize;
-  transform: translateX(-20px);
-  transition: all 0.3a ease;
-  opacity: 0;
-}
-
-.projects .projects-item:hover .projects-info h4{
-  transform: translateX(0px);
-  opacity: 1;
-}
-
-.projects .projects-item .projects-info .icon{
-  height: 40px;
-  width: 40px;
-  color: white;
-  background-color: black;
-  text-align: center;
-  border-radius: 50%;
-  position: absolute;
-  right: 30px;
-  bottom: 30px;
-  transform: translateX(20px);
-  transition: all 0.3s ease;
-  opacity: 0;
-}
-
-.projects .projects-item:hover .projects-info .icon{
-  transform: translateX(0px);
-  opacity: 1;
-}
-
-.projects .projects-item .projects-info .icon .fa{
-  line-height: 40px;
-}
-
-.container .row{
   justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.line li {
+  width: 30px;
+  height: 4px;
+  background-color: #00ffd1;
+  border-radius: 2px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  column-gap: 1.5rem;
+  row-gap: 2.5rem;
 }
 
 
+
+.project-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.project-card.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  padding: 1rem;
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+  text-align: center;
+}
+
+.project-card:hover .project-content {
+  transform: translateY(0);
+}
+
+.project-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.project-links a {
+  color: #00ffd1;
+  margin: 0 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-links a:hover {
+  color: #ffdd57;
+}
 
 
 
