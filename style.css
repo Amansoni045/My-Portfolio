@@ -118,7 +118,7 @@ ul{
   padding-top: 80px;
 }
 
-.social-media{
+.social-media {
   position: absolute;
   top: 53%;
   left: 50px;
@@ -127,7 +127,7 @@ ul{
   border-radius: 50px;
 }
 
-.social-media li a{
+.social-media li a {
   font-size: 18px;
   display: block;
   text-align: center;
@@ -136,8 +136,20 @@ ul{
   transition: all 0.3s ease-out 0s;
 }
 
-.social-media li a:hover{
+.social-media li a i,
+.social-media li a img.social-icon-img {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(6%) saturate(216%) hue-rotate(184deg) brightness(96%) contrast(91%);
+  transition: filter 0.3s ease;
+  height: 24px;
+}
+
+.social-media li a:hover {
   color: black;
+}
+
+.social-media li a:hover i,
+.social-media li a:hover img.social-icon-img {
+  filter: none;
 }
 
 .home-section .home-text, .home-section .home-image{
@@ -324,7 +336,7 @@ img{
 .projects-section {
   min-height: 100vh;
   padding: 60px 20px 40px;
-  background: (135deg, #f0faff, #ffffff);
+  background: linear-gradient(135deg, #f0faff, #ffffff);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -371,18 +383,15 @@ img{
   row-gap: 2.5rem;
 }
 
-
-
 .project-card {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
   background-color: #fff;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  transition: opacity 0.6s ease, transform 0.6s ease;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .project-card.reveal {
@@ -441,4 +450,116 @@ img{
 
 
 
+.contact-section {
+  min-height: 100vh;
+  padding: 60px 20px 40px;
+  background: linear-gradient(135deg, #f0faff, #ffffff);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title .main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.section-title .line {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.section-title .line li {
+  width: 10px;
+  height: 10px;
+  background-color: #7f5af0;
+  border-radius: 50%;
+}
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.contact-info p {
+  margin: 8px 0;
+}
+
+.contact-info a {
+  color: #7f5af0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #6246ea;
+}
+
+.contact-form {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #d0d0ff;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s ease;
+  background-color: #f9f9ff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #7f5af0;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(127, 90, 240, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.send-btn {
+  background-color: #7f5af0;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  box-shadow: 0 4px 14px rgba(127, 90, 240, 0.3);
+}
+
+.send-btn:hover {
+  background-color: #6246ea;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(98, 70, 234, 0.4);
+}

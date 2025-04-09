@@ -47,3 +47,35 @@ document.addEventListener("DOMContentLoaded", () => {
   cards.forEach(card => observer.observe(card));
 });
 
+document.querySelector('.contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const name = this.querySelector('input[type="text"]').value;
+  const email = this.querySelector('input[type="email"]').value;
+  const message = this.querySelector('textarea').value;
+  const btn = this.querySelector('.send-btn');
+  
+  if (!name || !email || !message) {
+    alert('Please fill in all fields');
+    return;
+  }
+
+  if (!email.includes('@') || !email.includes('.')) {
+    alert('Please enter a valid email');
+    return;
+  }
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  setTimeout(() => {
+    alert('Message sent!');
+    this.reset();
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+  }, 1000);
+});
+
+
+
+
