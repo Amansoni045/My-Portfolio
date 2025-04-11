@@ -16,6 +16,10 @@ body {
   background: linear-gradient(135deg, #f0faff, #ffffff);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 ul{
   list-style: none;
@@ -110,19 +114,21 @@ ul{
   width: 15%;
 }
 
-.home-section{
+.home-section {
   position: relative;
   background: linear-gradient(135deg, #f0faff, #ffffff);
   z-index: 1;
   overflow-x: hidden;
   padding-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .social-media {
   position: absolute;
-  top: 53%;
+  top: 50%;
   left: 50px;
-  transform: translateY(-53%);
+  transform: translateY(-50%);
   border: 1px solid black;
   border-radius: 50px;
 }
@@ -151,6 +157,36 @@ ul{
 .social-media li a:hover img.social-icon-img {
   filter: none;
 }
+
+@media (max-width: 768px) {
+  .social-media {
+    position: fixed;
+    top: auto;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    border-radius: 30px;
+    padding: 5px 10px;
+    background: white;
+    z-index: 10;
+  }
+
+  .social-media li {
+    display: inline-block;
+  }
+
+  .social-media li a {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .social-media li a i,
+  .social-media li a img.social-icon-img {
+    height: 20px;
+  }
+}
+
 
 .home-section .home-text, .home-section .home-image{
   flex: 0 0 50%;
