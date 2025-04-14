@@ -77,5 +77,26 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
 });
 
 
+const form = document.getElementById('contact-form');
+const result = document.getElementById('result');
 
-
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  fetch(form.action, {
+    method: form.method,
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      result.innerHTML = "<span style='color: green;'>✅ Thanks for your message!</span>";
+      form.reset();
+    } else {
+      result.innerHTML = "<span style='color: red;'>❌ Oops! Something went wrong.</span>";
+    }
+  }).catch(error => {
+    result.innerHTML = "<span style='color: red;'>❌ Oops! Something went wrong.</span>";
+  });
+});

@@ -192,24 +192,29 @@
       </div>
   
       <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:official.soniaman@gmail.com">official.soniaman@gmail.com</a></p>
+        <p><strong>Email:</strong> <a href="mailto:aman.soni2024@nst.rishihood.edu.in">aman.soni2024@nst.rishihood.edu.in</a></p>
         <p><strong>Phone:</strong> <a href="tel:+917770889004">+91 7770889004</a></p>
-      </div>      
+      </div>
   
-      <form class="contact-form id="contact-form">
+      <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+        <input type="hidden" name="access_key" value="07320a75-3c19-43e1-88a8-e17dcbd6764a">
+  
         <div class="form-group">
-          <input type="text" placeholder="Your Name" required>
+          <input type="text" name="name" placeholder="Your Name" required>
         </div>
         <div class="form-group">
-          <input type="email" placeholder="Your Email" required>
+          <input type="email" name="email" placeholder="Your Email" required>
         </div>
         <div class="form-group">
-          <textarea placeholder="Your Message" required></textarea>
+          <textarea name="message" placeholder="Your Message" required></textarea>
         </div>
+  
         <button type="submit" class="send-btn">Send Message</button>
       </form>
     </div>
   </section>
+  
 
   <script src="script.js"></script>
 </body>
