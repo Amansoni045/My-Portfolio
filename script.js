@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-
   window.addEventListener("scroll", function () {
     let fromTop = window.scrollY + 100;
     navLinks.forEach((link) => {
@@ -32,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".project-card");
 
@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cards.forEach(card => observer.observe(card));
 });
+
 
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
