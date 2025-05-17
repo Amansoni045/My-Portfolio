@@ -33,18 +33,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".project-card");
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const skillSections = document.querySelectorAll('.skill-section');
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("reveal");
-        observer.unobserve(entry.target);
-      }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  tabButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const targetSkill = button.dataset.skill;
+
+      tabButtons.forEach((btn) => btn.classList.remove('active'));
+
+      skillSections.forEach((section) => {
+        section.classList.remove('active');
+        if (section.dataset.skill === targetSkill) {
+          section.classList.add('active');
+        }
+      });
+
+      button.classList.add('active');
     });
-  }, { threshold: 0.2 });
+  });
 
-  cards.forEach(card => observer.observe(card));
+  document.querySelectorAll('.project-card').forEach((card) => {
+    observer.observe(card);
+  });
 });
 
 
