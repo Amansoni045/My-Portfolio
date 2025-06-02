@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".nav-link");
+  const navbar = document.querySelector(".navbar");
 
   navLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
@@ -15,8 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
   window.addEventListener("scroll", function () {
     let fromTop = window.scrollY + 100;
+
     navLinks.forEach((link) => {
       const section = document.querySelector(link.getAttribute("href"));
       if (
@@ -28,8 +31,15 @@ document.addEventListener("DOMContentLoaded", function () {
         link.classList.remove("active");
       }
     });
+
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
   });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", () => {

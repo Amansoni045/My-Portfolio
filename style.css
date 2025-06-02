@@ -31,9 +31,15 @@ ul{
   font-weight: 700;
   font-size: 24px;
   letter-spacing: 1px;
-  color: #ffffff; 
-  text-decoration: none; 
+  color: #000000; 
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+
+.navbar.scrolled .logo a {
+  color: #ffffff;
+}
+
 
 .container{
   max-width: 1140px;
@@ -50,9 +56,15 @@ ul{
   z-index: 999;
   width: 100%;
   padding: 25px;
+  background: transparent; 
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar.scrolled {
   background: rgba(23, 30, 57, 0.6);
   backdrop-filter: blur(10px);
 }
+
 
 .navbar .menu .nav-item{
   display: inline-block;
