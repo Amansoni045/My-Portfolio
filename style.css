@@ -273,14 +273,16 @@ img{
 
 .skills {
   background: linear-gradient(135deg, #f0faff, #ffffff);
-  min-height: 100vh;
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
+  min-height: auto !important;
+  height: auto !important;
   margin-top: 100px;
 }
+
 
 .section-title {
   text-align: center;
@@ -306,23 +308,24 @@ img{
 }
 
 .skills-info {
+  width: 100%;
   display: flex;
   justify-content: center;
-  width: 100%;
+  flex-wrap: wrap;
 }
+
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 2rem;
-  max-width: 900px;
+  max-width: 1000px;
   width: 100%;
-  padding: 2.5rem;
+  padding: 2rem;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 1.8rem;
   backdrop-filter: blur(12px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease-in-out;
 }
 
 .skill-item {
