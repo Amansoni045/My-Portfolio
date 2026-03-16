@@ -23,17 +23,17 @@ export default function Contact() {
       });
 
       if (response.ok) {
-        setStatus("✅ Thanks for your message!");
+        setStatus("Thanks for your message!");
         e.target.reset();
       } else {
-        setStatus("❌ Oops! Something went wrong.");
+        setStatus("Oops! Something went wrong.");
       }
     } catch (error) {
       console.error(error);
-      setStatus("❌ Oops! Something went wrong.");
+      setStatus("Oops! Something went wrong.");
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setStatus(""), 5000); // Clear message after 5 seconds
+      setTimeout(() => setStatus(""), 5000); 
     }
   };
 
@@ -57,10 +57,9 @@ export default function Contact() {
         </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
-          {/* Replace with your actual Web3Forms Access Key */}
           <input
             type="hidden"
-            name="access_key"
+            name="a0c15396-6189-479a-b028-e65a8634bd3f"
             value="07320a75-3c19-43e1-88a8-e17dcbd6764a"
           />
 

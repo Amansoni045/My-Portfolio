@@ -7,7 +7,6 @@ export default function Projects() {
   const [activeTab, setActiveTab] = useState("webdev");
   const projectCardsRef = useRef([]);
 
-  // Intersection Observer for scroll reveal animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -28,7 +27,7 @@ export default function Projects() {
     return () => {
       observer.disconnect();
     };
-  }, [activeTab]); // Re-run observer when tabs change to reveal new cards
+  }, [activeTab]); 
 
   return (
     <section className="projects-section" id="projects">
@@ -68,7 +67,6 @@ export default function Projects() {
             activeTab === "webdev" ? "active" : ""
           }`}
         >
-          {/* WEB DEV PROJECTS */}
           <div className="project-card" ref={(el) => (projectCardsRef.current[0] = el)}>
             <Image
               src="/Assets/Akash Jewellers.png"

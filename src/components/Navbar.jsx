@@ -40,7 +40,7 @@ export default function Navbar() {
 
   const handleLinkClick = (e, targetId) => {
     e.preventDefault();
-    setIsMobileOpen(false); // Close mobile menu when link is clicked
+    setIsMobileOpen(false); 
     const targetSection = document.getElementById(targetId);
 
     if (targetSection) {
