@@ -38,12 +38,11 @@ export default function Hero() {
           <div className="home-text">
             <h4>Hi, my name is</h4>
             <h1>Aman Soni</h1>
-            <span>Web Developer</span>
+            <span>Web Developer focused on modern and AI-powered solutions</span>
             <p>
-              Aspiring MERN Stack Developer with hands-on experience in web
-              projects and an SDE Internship at Bluestock Fintech. Solved 200+
-              Python-based DSA problems on LeetCode and hold a CodeForces rating
-              of 900 !
+              customers and grow online.I’ve worked on real-world projects and completed an internship at a fintech company. I focus on creating fast, user-friendly websites that look professional and actually convert visitors into customers.
+
+              I’m also learning AI/ML to build smarter and more efficient solutions.
             </p>
             <a href="#contact" className="btn btn-1">
               Contact Now
