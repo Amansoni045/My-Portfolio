@@ -12,28 +12,34 @@ export default function Contact() {
     setStatus("Sending...");
 
     const formData = new FormData(e.target);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        body: formData,
         headers: {
+          "Content-Type": "application/json",
           Accept: "application/json",
         },
+        body: json,
       });
+
+      const result = await response.json();
 
       if (response.ok) {
         setStatus("Thanks for your message!");
         e.target.reset();
       } else {
-        setStatus("Oops! Something went wrong.");
+        console.error("Web3Forms Error:", result);
+        setStatus(result.message || "Oops! Something went wrong.");
       }
     } catch (error) {
-      console.error(error);
+      console.error("Submission Error:", error);
       setStatus("Oops! Something went wrong.");
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setStatus(""), 5000); 
+      setTimeout(() => setStatus(""), 5000);
     }
   };
 
@@ -47,7 +53,7 @@ export default function Contact() {
         <div className="contact-info">
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:[EMAIL_ADDRESS]">
+            <a href="mailto:official.soniaman@gmail.com">
               official.soniaman@gmail.com
             </a>
           </p>
