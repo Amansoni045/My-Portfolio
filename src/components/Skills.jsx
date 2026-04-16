@@ -100,17 +100,6 @@ export default function Skills() {
             <span>Prisma</span>
           </div>
 
-          <div className="skill-item">
-            <i>
-              <Image
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg"
-                alt="Golang"
-                width={48}
-                height={48}
-              />
-            </i>
-            <span>Golang</span>
-          </div>
 
           {/* DATABASES */}
           <div className="skill-item">

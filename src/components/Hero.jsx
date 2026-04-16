@@ -40,12 +40,13 @@ export default function Hero() {
             <h1>Aman Soni</h1>
             <span>Web Developer focused on modern and AI-powered solutions</span>
             <p>
-              customers and grow online.I’ve worked on real-world projects and completed an internship at a fintech company. I focus on creating fast, user-friendly websites that look professional and actually convert visitors into customers.
+              I’ve worked on real-world projects and completed an internship at a fintech company. I focus on creating fast, user-friendly websites that look professional and actually convert visitors into customers.
 
               I’m also learning AI/ML to build smarter and more efficient solutions.
             </p>
             <a href="#contact" className="btn btn-1">
               Contact Now
+              <i className="fas fa-arrow-right"></i>
             </a>
           </div>
           <div className="home-image">

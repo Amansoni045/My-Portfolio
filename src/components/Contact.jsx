@@ -47,8 +47,8 @@ export default function Contact() {
         <div className="contact-info">
           <p>
             <strong>Email:</strong>{" "}
-            <a href="mailto:aman.soni2024@nst.rishihood.edu.in">
-              aman.soni2024@nst.rishihood.edu.in
+            <a href="mailto:[EMAIL_ADDRESS]">
+              official.soniaman@gmail.com
             </a>
           </p>
           <p>
@@ -59,9 +59,16 @@ export default function Contact() {
         <form className="contact-form" onSubmit={handleSubmit}>
           <input
             type="hidden"
-            name="a0c15396-6189-479a-b028-e65a8634bd3f"
+            name="access_key"
             value="07320a75-3c19-43e1-88a8-e17dcbd6764a"
           />
+          {/* Honeypot Spam Protection */}
+          <input
+            type="checkbox"
+            name="botcheck"
+            className="hidden"
+            style={{ display: "none" }}
+          ></input>
 
           <div className="form-group">
             <input type="text" name="name" placeholder="Your Name" required />
