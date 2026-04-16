@@ -168,18 +168,18 @@ export default function Projects() {
 
           <div className="project-card" ref={(el) => (projectCardsRef.current[5] = el)}>
             <Image
-              src="/Assets/My Portfolio.png"
-              alt="My Portfolio"
+              src="/Assets/FinancialDashboard.png"
+              alt="Financial Dashboard"
               width={400}
               height={300}
             />
             <div className="project-content">
-              <h4>Personal Portfolio</h4>
+              <h4>Financial Dashboard</h4>
               <div className="project-links">
-                <a href="https://my-portfolio-murex-zeta-82.vercel.app/" target="_blank" rel="noopener noreferrer" className="demo-link">
+                <a href="https://financial-dashboard-orpin-two.vercel.app/" target="_blank" rel="noopener noreferrer" className="demo-link">
                   <i className="fas fa-external-link-alt"></i> Demo
                 </a>
-                <a href="https://github.com/Amansoni045" target="_blank" rel="noopener noreferrer" className="github-link">
+                <a href="https://github.com/Amansoni045/financial-dashboard" target="_blank" rel="noopener noreferrer" className="github-link">
                   <i className="fab fa-github"></i> GitHub
                 </a>
               </div>

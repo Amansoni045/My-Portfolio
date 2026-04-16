@@ -13,7 +13,6 @@ export default function Contact() {
 
     const formData = new FormData(e.target);
     const object = Object.fromEntries(formData);
-    // Dynamically set the subject to include the sender's name
     object.subject = `Portfolio Message from ${object.name}`;
     const json = JSON.stringify(object);
 
