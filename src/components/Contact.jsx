@@ -13,6 +13,8 @@ export default function Contact() {
 
     const formData = new FormData(e.target);
     const object = Object.fromEntries(formData);
+    // Dynamically set the subject to include the sender's name
+    object.subject = `Portfolio Message from ${object.name}`;
     const json = JSON.stringify(object);
 
     try {
@@ -66,7 +68,7 @@ export default function Contact() {
           <input
             type="hidden"
             name="access_key"
-            value="07320a75-3c19-43e1-88a8-e17dcbd6764a"
+            value="1ef44a54-4213-48b3-a347-ca61c2013a63"
           />
           {/* Honeypot Spam Protection */}
           <input
