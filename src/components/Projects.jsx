@@ -196,6 +196,33 @@ export default function Projects() {
             className="project-card"
             ref={(el) => (projectCardsRef.current[6] = el)}
           >
+            <Image src="/Assets/Slip.png" alt="Slip AI" width={400} height={300} />
+            <div className="project-content">
+              <h4>Slip - AI Platform</h4>
+              <div className="project-links">
+                <a
+                  href="https://slip-ai.streamlit.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="demo-link"
+                >
+                  <i className="fas fa-external-link-alt"></i> Demo
+                </a>
+                <a
+                  href="https://github.com/Amansoni045/Slip/tree/main"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="github-link"
+                >
+                  <i className="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            className="project-card"
+            ref={(el) => (projectCardsRef.current[7] = el)}
+          >
             <Image src="/Assets/AuraAI.png" alt="AuraAI" width={400} height={300} />
             <div className="project-content">
               <h4>AURA AI</h4>
@@ -210,33 +237,6 @@ export default function Projects() {
                 </a>
                 <a
                   href="https://github.com/Amansoni045/AURA-AI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="github-link"
-                >
-                  <i className="fab fa-github"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            className="project-card"
-            ref={(el) => (projectCardsRef.current[7] = el)}
-          >
-            <Image src="/Assets/ChurnSense.png" alt="ChurnSense" width={400} height={300} />
-            <div className="project-content">
-              <h4>ChurnSense</h4>
-              <div className="project-links">
-                <a
-                  href="https://churn-sense.streamlit.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="demo-link"
-                >
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a
-                  href="https://github.com/Amansoni045/GEN_AI_MID_TERM"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="github-link"
