@@ -201,7 +201,7 @@ export default function Projects() {
               <h4>Slip - AI Platform</h4>
               <div className="project-links">
                 <a
-                  href="https://slip-ai.streamlit.app/"
+                  href="https://slip-rho.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="demo-link"
@@ -209,7 +209,7 @@ export default function Projects() {
                   <i className="fas fa-external-link-alt"></i> Demo
                 </a>
                 <a
-                  href="https://github.com/Amansoni045/Slip/tree/main"
+                  href="https://github.com/Amansoni045/Slip"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="github-link"
@@ -228,7 +228,7 @@ export default function Projects() {
               <h4>AURA AI</h4>
               <div className="project-links">
                 <a
-                  href="https://auraai-pied.vercel.app/"
+                  href="https://aura-ai-mocha-five.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="demo-link"
@@ -237,6 +237,33 @@ export default function Projects() {
                 </a>
                 <a
                   href="https://github.com/Amansoni045/AURA-AI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="github-link"
+                >
+                  <i className="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            className="project-card"
+            ref={(el) => (projectCardsRef.current[8] = el)}
+          >
+            <Image src="/Assets/EmotionSense.png" alt="EmotionSense" width={400} height={300} />
+            <div className="project-content">
+              <h4>EmotionSense</h4>
+              <div className="project-links">
+                <a
+                  href="https://emotion-sense-gamma.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="demo-link"
+                >
+                  <i className="fas fa-external-link-alt"></i> Demo
+                </a>
+                <a
+                  href="https://github.com/Amansoni045/EmotionSense"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="github-link"
@@ -255,7 +282,7 @@ export default function Projects() {
         >
           <div
             className="project-card"
-            ref={(el) => (projectCardsRef.current[8] = el)}
+            ref={(el) => (projectCardsRef.current[9] = el)}
           >
             <Image
               src="/Assets/CabMate.png"
@@ -280,7 +307,7 @@ export default function Projects() {
 
           <div
             className="project-card"
-            ref={(el) => (projectCardsRef.current[9] = el)}
+            ref={(el) => (projectCardsRef.current[10] = el)}
           >
             <Image
               src="/Assets/Eatmore.png"
