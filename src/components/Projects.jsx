@@ -273,6 +273,60 @@ export default function Projects() {
               </div>
             </div>
           </div>
+          <div
+            className="project-card"
+            ref={(el) => (projectCardsRef.current[9] = el)}
+          >
+            <Image src="/Assets/NeuralVision.png" alt="NeuralVision AI" width={400} height={300} />
+            <div className="project-content">
+              <h4>NeuralVision AI</h4>
+              <div className="project-links">
+                <a
+                  href="https://neural-vision-ai.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="demo-link"
+                >
+                  <i className="fas fa-external-link-alt"></i> Demo
+                </a>
+                <a
+                  href="https://github.com/Amansoni045/NeuralVision-AI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="github-link"
+                >
+                  <i className="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            className="project-card"
+            ref={(el) => (projectCardsRef.current[10] = el)}
+          >
+            <Image src="/Assets/Verra.png" alt="Verra" width={400} height={300} />
+            <div className="project-content">
+              <h4>Verra</h4>
+              <div className="project-links">
+                <a
+                  href="https://verra-two.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="demo-link"
+                >
+                  <i className="fas fa-external-link-alt"></i> Demo
+                </a>
+                <a
+                  href="https://github.com/Amansoni045/Verra"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="github-link"
+                >
+                  <i className="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div
@@ -282,7 +336,7 @@ export default function Projects() {
         >
           <div
             className="project-card"
-            ref={(el) => (projectCardsRef.current[9] = el)}
+            ref={(el) => (projectCardsRef.current[11] = el)}
           >
             <Image
               src="/Assets/CabMate.png"
@@ -307,7 +361,7 @@ export default function Projects() {
 
           <div
             className="project-card"
-            ref={(el) => (projectCardsRef.current[10] = el)}
+            ref={(el) => (projectCardsRef.current[12] = el)}
           >
             <Image
               src="/Assets/Eatmore.png"
