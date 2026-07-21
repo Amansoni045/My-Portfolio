@@ -2,12 +2,111 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
+
+const GithubIcon = ({ size = 16 }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="lucide lucide-github"
+  >
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+    <path d="M9 18c-4.51 2-5-2-7-2" />
+  </svg>
+);
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState("webdev");
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [isAnimating, setIsAnimating] = useState(false);
   const projectCardsRef = useRef([]);
 
+  const projectsData = [
+    {
+      id: 1,
+      title: "Slip",
+      description: "AI Customer Churn Intelligence Platform.",
+      image: "/Assets/Slip.png",
+      tags: ["Python", "Scikit-learn", "React", "FastAPI"],
+      category: "AI / ML",
+      demoLink: "https://slip-rho.vercel.app/",
+      githubLink: "https://github.com/Amansoni045/Slip",
+    },
+    {
+      id: 2,
+      title: "Akash Jewellers",
+      description: "A premium jewelry e-commerce platform.",
+      image: "/Assets/Akash Jewellers.png",
+      tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+      category: "Full Stack",
+      demoLink: "https://akash-jewellers-one.vercel.app/",
+      githubLink: "https://github.com/Amansoni045/akash_jewellers",
+    },
+    {
+      id: 3,
+      title: "NeuralVision AI",
+      description: "Deep learning based image recognition platform.",
+      image: "/Assets/NeuralVision.png",
+      tags: ["Python", "TensorFlow", "Deep Learning"],
+      category: "AI / ML",
+      demoLink: "https://neural-vision-ai.vercel.app/",
+      githubLink: "https://github.com/Amansoni045/NeuralVision-AI",
+    },
+    {
+      id: 4,
+      title: "Verra",
+      description: "Predictive analytics and forecasting tool.",
+      image: "/Assets/Verra.png",
+      tags: ["Python", "Pandas", "Machine Learning"],
+      category: "AI / ML",
+      demoLink: "https://verra-two.vercel.app/",
+      githubLink: "https://github.com/Amansoni045/Verra",
+    },
+    {
+      id: 5,
+      title: "EmotionSense AI",
+      description: "Real-time emotion detection and analysis.",
+      image: "/Assets/EmotionSense.png",
+      tags: ["Python", "Keras", "Computer Vision"],
+      category: "AI / ML",
+      demoLink: "https://emotion-sense-gamma.vercel.app/",
+      githubLink: "https://github.com/Amansoni045/EmotionSense",
+    },
+    {
+      id: 6,
+      title: "BookMyYatra",
+      description: "Travel booking and management system.",
+      image: "/Assets/BookMyYatra.png",
+      tags: ["Next.js", "Prisma", "PostgreSQL"],
+      category: "Full Stack",
+      demoLink: "https://book-my-yatra.vercel.app/",
+      githubLink: "https://github.com/Amansoni045/BookMyYatra",
+    },
+  ];
+
+  const handleFilterChange = (filter) => {
+    if (filter === activeFilter) return;
+    setIsAnimating(true);
+    setTimeout(() => {
+      setActiveFilter(filter);
+      setIsAnimating(false);
+    }, 300); // 300ms for fade out
+  };
+
+  const filteredProjects = activeFilter === "All"
+    ? projectsData
+    : projectsData.filter((project) => project.category === activeFilter);
+
   useEffect(() => {
+    // Re-initialize ref array on filter change
+    projectCardsRef.current = projectCardsRef.current.slice(0, filteredProjects.length);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -27,12 +126,12 @@ export default function Projects() {
     return () => {
       observer.disconnect();
     };
-  }, [activeTab]);
+  }, [filteredProjects.length, isAnimating]);
 
   return (
     <section className="projects-section" id="projects">
       <div className="container">
-        <div className="section-title">
+        <div className="section-title" style={{ marginBottom: '20px' }}>
           <h3 className="main-title">My Latest Projects</h3>
           <ul className="line">
             <li></li>
@@ -41,348 +140,66 @@ export default function Projects() {
           </ul>
         </div>
 
-        <div className="skills-tabs">
-          <button
-            className={`tab-button ${activeTab === "webdev" ? "active" : ""}`}
-            onClick={() => setActiveTab("webdev")}
-          >
-            WebDev
-          </button>
-          <button
-            className={`tab-button ${activeTab === "python" ? "active" : ""}`}
-            onClick={() => setActiveTab("python")}
-          >
-            Python
-          </button>
-          <button
-            className={`tab-button ${activeTab === "figma" ? "active" : ""}`}
-            onClick={() => setActiveTab("figma")}
-          >
-            Figma
-          </button>
+        <div className="skills-tabs" style={{ marginBottom: '30px' }}>
+          {["All", "AI / ML", "Full Stack"].map((filter) => (
+            <button
+              key={filter}
+              className={`tab-button ${activeFilter === filter ? "active" : ""}`}
+              onClick={() => handleFilterChange(filter)}
+            >
+              {filter}
+            </button>
+          ))}
         </div>
 
-        <div
-          className={`projects-grid skill-section ${activeTab === "webdev" ? "active" : ""
-            }`}
-        >
-          <div className="project-card" ref={(el) => (projectCardsRef.current[0] = el)}>
-            <Image
-              src="/Assets/Akash Jewellers.png"
-              alt="Akash Jewellers"
-              width={400}
-              height={300}
-            />
-            <div className="project-content">
-              <h4>Akash Jewellers</h4>
-              <div className="project-links">
-                <a href="https://akash-jewellers-one.vercel.app/" target="_blank" rel="noopener noreferrer" className="demo-link">
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a href="https://github.com/Amansoni045/akash_jewellers" target="_blank" rel="noopener noreferrer" className="github-link">
-                  <i className="fab fa-github"></i> GitHub
-                </a>
+        <div className={`projects-grid ${isAnimating ? "fade-out" : "fade-in"}`}>
+          {filteredProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className="project-card"
+              ref={(el) => (projectCardsRef.current[index] = el)}
+            >
+              <div className="project-image">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={400}
+                  height={300}
+                />
+              </div>
+              <div className="project-info">
+                <h4>{project.title}</h4>
+                <p>{project.description}</p>
+                <div className="project-tags">
+                  {project.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+                <div className="project-actions">
+                  {project.demoLink && (
+                    <a
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                    >
+                      <ExternalLink size={16} /> Live Demo
+                    </a>
+                  )}
+                  {project.githubLink && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-secondary"
+                    >
+                      <GithubIcon size={16} /> GitHub
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-
-          <div className="project-card" ref={(el) => (projectCardsRef.current[1] = el)}>
-            <Image
-              src="/Assets/Johar.png"
-              alt="Johar"
-              width={400}
-              height={300}
-            />
-            <div className="project-content">
-              <h4>Explore Jharkhand</h4>
-              <div className="project-links">
-                <a href="https://sih-explore-jharkhand-henna.vercel.app/" target="_blank" rel="noopener noreferrer" className="demo-link">
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a href="https://github.com/Amansoni045/sih_explore_jharkhand" target="_blank" rel="noopener noreferrer" className="github-link">
-                  <i className="fab fa-github"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-card" ref={(el) => (projectCardsRef.current[2] = el)}>
-            <Image
-              src="/Assets/Ai-Dashboard.png"
-              alt="AI-Dashboard"
-              width={400}
-              height={300}
-            />
-            <div className="project-content">
-              <h4>AI Analytics Dashboard</h4>
-              <div className="project-links">
-                <a href="https://ai-dashboard-gilt.vercel.app/" target="_blank" rel="noopener noreferrer" className="demo-link">
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a href="https://github.com/Amansoni045" target="_blank" rel="noopener noreferrer" className="github-link">
-                  <i className="fab fa-github"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-card" ref={(el) => (projectCardsRef.current[3] = el)}>
-            <Image
-              src="/Assets/BookMyYatra.png"
-              alt="BookMyYatra"
-              width={400}
-              height={300}
-            />
-            <div className="project-content">
-              <h4>BookMyYatra</h4>
-              <div className="project-links">
-                <a href="https://book-my-yatra.vercel.app/" target="_blank" rel="noopener noreferrer" className="demo-link">
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a href="https://github.com/Amansoni045/BookMyYatra" target="_blank" rel="noopener noreferrer" className="github-link">
-                  <i className="fab fa-github"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-card" ref={(el) => (projectCardsRef.current[4] = el)}>
-            <Image
-              src="/Assets/StartupSprint.png"
-              alt="StartupSprint"
-              width={400}
-              height={300}
-            />
-            <div className="project-content">
-              <h4>StartupSprint</h4>
-              <div className="project-links">
-                <a href="https://startup-sprint.vercel.app/" target="_blank" rel="noopener noreferrer" className="demo-link">
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a href="https://github.com/Amansoni045" target="_blank" rel="noopener noreferrer" className="github-link">
-                  <i className="fab fa-github"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="project-card" ref={(el) => (projectCardsRef.current[5] = el)}>
-            <Image
-              src="/Assets/FinancialDashboard.png"
-              alt="Financial Dashboard"
-              width={400}
-              height={300}
-            />
-            <div className="project-content">
-              <h4>Financial Dashboard</h4>
-              <div className="project-links">
-                <a href="https://financial-dashboard-orpin-two.vercel.app/" target="_blank" rel="noopener noreferrer" className="demo-link">
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a href="https://github.com/Amansoni045/financial-dashboard" target="_blank" rel="noopener noreferrer" className="github-link">
-                  <i className="fab fa-github"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className={`projects-grid skill-section ${
-            activeTab === "python" ? "active" : ""
-          }`}
-        >
-          <div
-            className="project-card"
-            ref={(el) => (projectCardsRef.current[6] = el)}
-          >
-            <Image src="/Assets/Slip.png" alt="Slip AI" width={400} height={300} />
-            <div className="project-content">
-              <h4>Slip - AI Platform</h4>
-              <div className="project-links">
-                <a
-                  href="https://slip-rho.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="demo-link"
-                >
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a
-                  href="https://github.com/Amansoni045/Slip"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="github-link"
-                >
-                  <i className="fab fa-github"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            className="project-card"
-            ref={(el) => (projectCardsRef.current[7] = el)}
-          >
-            <Image src="/Assets/AuraAI.png" alt="AuraAI" width={400} height={300} />
-            <div className="project-content">
-              <h4>AURA AI</h4>
-              <div className="project-links">
-                <a
-                  href="https://aura-ai-mocha-five.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="demo-link"
-                >
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a
-                  href="https://github.com/Amansoni045/AURA-AI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="github-link"
-                >
-                  <i className="fab fa-github"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            className="project-card"
-            ref={(el) => (projectCardsRef.current[8] = el)}
-          >
-            <Image src="/Assets/EmotionSense.png" alt="EmotionSense" width={400} height={300} />
-            <div className="project-content">
-              <h4>EmotionSense</h4>
-              <div className="project-links">
-                <a
-                  href="https://emotion-sense-gamma.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="demo-link"
-                >
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a
-                  href="https://github.com/Amansoni045/EmotionSense"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="github-link"
-                >
-                  <i className="fab fa-github"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            className="project-card"
-            ref={(el) => (projectCardsRef.current[9] = el)}
-          >
-            <Image src="/Assets/NeuralVision.png" alt="NeuralVision AI" width={400} height={300} />
-            <div className="project-content">
-              <h4>NeuralVision AI</h4>
-              <div className="project-links">
-                <a
-                  href="https://neural-vision-ai.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="demo-link"
-                >
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a
-                  href="https://github.com/Amansoni045/NeuralVision-AI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="github-link"
-                >
-                  <i className="fab fa-github"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            className="project-card"
-            ref={(el) => (projectCardsRef.current[10] = el)}
-          >
-            <Image src="/Assets/Verra.png" alt="Verra" width={400} height={300} />
-            <div className="project-content">
-              <h4>Verra</h4>
-              <div className="project-links">
-                <a
-                  href="https://verra-two.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="demo-link"
-                >
-                  <i className="fas fa-external-link-alt"></i> Demo
-                </a>
-                <a
-                  href="https://github.com/Amansoni045/Verra"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="github-link"
-                >
-                  <i className="fab fa-github"></i> GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          className={`projects-grid skill-section ${
-            activeTab === "figma" ? "active" : ""
-          }`}
-        >
-          <div
-            className="project-card"
-            ref={(el) => (projectCardsRef.current[11] = el)}
-          >
-            <Image
-              src="/Assets/CabMate.png"
-              alt="CabMate"
-              width={400}
-              height={300}
-            />
-            <div className="project-content">
-              <h4>CabMate</h4>
-              <div className="project-links">
-                <a
-                  href="https://www.figma.com/design/SyunkZq1wawt3bmuhRHRGD/CabMate?t=1dpvc1PULr0iTaJG-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="demo-link"
-                >
-                  <i className="fab fa-figma"></i> View in Figma
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="project-card"
-            ref={(el) => (projectCardsRef.current[12] = el)}
-          >
-            <Image
-              src="/Assets/Eatmore.png"
-              alt="EatMore"
-              width={400}
-              height={300}
-            />
-            <div className="project-content">
-              <h4>EatMore</h4>
-              <div className="project-links">
-                <a
-                  href="https://www.figma.com/design/1DBlrPr7mrAzVG3aeoKVaK/Paper-and-Mid-Fidelity-Wireframes?t=1dpvc1PULr0iTaJG-1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="demo-link"
-                >
-                  <i className="fab fa-figma"></i> View in Figma
-                </a>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
