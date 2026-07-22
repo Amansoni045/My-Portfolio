@@ -45,7 +45,7 @@ export default function Navbar() {
 
     if (targetSection) {
       window.scrollTo({
-        top: targetSection.offsetTop - 70,
+        top: targetSection.offsetTop,
         behavior: "smooth",
       });
     }

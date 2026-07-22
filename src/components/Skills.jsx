@@ -248,6 +248,47 @@ export default function Skills() {
             <span>Computer Vision</span>
           </div>
 
+          {/* Row 6 (Generative AI & Modern AI) */}
+          <div className="skill-item">
+            <i className="fas fa-robot" style={{ color: "#a855f7" }}></i>
+            <span>Generative AI</span>
+          </div>
+
+          <div className="skill-item">
+            <i className="fas fa-comment-dots" style={{ color: "#3b82f6" }}></i>
+            <span>Large Language Models (LLMs)</span>
+          </div>
+
+          <div className="skill-item">
+            <i className="fas fa-link" style={{ color: "#10b981" }}></i>
+            <span>LangChain</span>
+          </div>
+
+          <div className="skill-item">
+            <i className="fas fa-database" style={{ color: "#ec4899" }}></i>
+            <span>Retrieval-Augmented Generation (RAG)</span>
+          </div>
+
+          <div className="skill-item">
+            <i className="fas fa-user-cog" style={{ color: "#f59e0b" }}></i>
+            <span>AI Agents</span>
+          </div>
+
+          <div className="skill-item">
+            <i className="fas fa-users-cog" style={{ color: "#6366f1" }}></i>
+            <span>Multi-Agent Systems</span>
+          </div>
+
+          <div className="skill-item">
+            <i className="fas fa-layer-group" style={{ color: "#06b6d4" }}></i>
+            <span>Vector Databases</span>
+          </div>
+
+          <div className="skill-item">
+            <i className="fas fa-smile" style={{ color: "#ffd700" }}></i>
+            <span>Hugging Face</span>
+          </div>
+
           {/* Row 6 (Other) */}
           <div className="skill-item">
             <i className="fas fa-code-branch" style={{ color: "#6e57e0" }}></i>
