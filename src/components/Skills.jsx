@@ -141,17 +141,6 @@ export default function Skills() {
           </div>
 
           {/* Row 4 (AI Libraries) */}
-          <div className="skill-item">
-            <i>
-              <Image
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg"
-                alt="Keras"
-                width={48}
-                height={48}
-              />
-            </i>
-            <span>Keras</span>
-          </div>
 
           <div className="skill-item">
             <i>
@@ -255,6 +244,11 @@ export default function Skills() {
           </div>
 
           <div className="skill-item">
+            <i className="fas fa-microchip" style={{ color: "#8b5cf6" }}></i>
+            <span>Agentic AI</span>
+          </div>
+
+          <div className="skill-item">
             <i className="fas fa-comment-dots" style={{ color: "#3b82f6" }}></i>
             <span>Large Language Models (LLMs)</span>
           </div>
@@ -262,6 +256,11 @@ export default function Skills() {
           <div className="skill-item">
             <i className="fas fa-link" style={{ color: "#10b981" }}></i>
             <span>LangChain</span>
+          </div>
+
+          <div className="skill-item">
+            <i className="fas fa-project-diagram" style={{ color: "#ff6b6b" }}></i>
+            <span>LangGraph</span>
           </div>
 
           <div className="skill-item">
